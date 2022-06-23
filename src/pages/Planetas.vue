@@ -25,7 +25,6 @@
                         <template #footer>
                             <div class="flex justify-content-between align-items-center">
                                 <span>Quantidade de habitantes: <span class="font-bold">{{ planeta.residents.length }}</span></span>
-                                <Button icon="pi pi-users"></Button>
                             </div>
                         </template>
                     </Card>
