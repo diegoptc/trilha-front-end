@@ -12,19 +12,19 @@
         <div>
             <div class="grid" v-if="personagens && personagens.length > 0">
                 <div class="col-12 lg:col-4" v-for="(personagem, index) in personagens" :key="index">
-                    <Card class="p-2">
+                    <Card class="p-2 surface-700 text-white">
                         <template #title>
                             {{ personagem.name }}
                         </template>
                         <template #content>
                             <div class="grid">
                                 <div class="col-12 lg:col-4">
-                                    <img width="80" :src="personagem.image" :alt="personagem.name">
+                                    <img width="100" :src="personagem.image" :alt="personagem.name">
                                 </div>
                                 <div class="col-12 lg:col-8">
                                     <ul>
                                         <li>Espécie: <span class="font-bold">{{ personagem.species }}</span></li>
-                                        <li>Tipo: <span class="font-bold">{{ personagem.type }}</span></li>
+                                        <li v-if="personagem.type">Tipo: <span class="font-bold">{{ personagem.type }}</span></li>
                                         <li>Gênero: <span class="font-bold">{{ personagem.gender }}</span></li>
                                     </ul>
                                 </div>
@@ -32,6 +32,9 @@
                         </template>
                         <template #footer>
                             <div class="flex justify-content-between align-items-center">
+                                <span>Quantidade de episodios: {{ personagem.episode.length }}</span>
+                                <font-awesome-icon v-if="personagem.status == 'Alive'" icon="fa-solid fa-heart" />
+                                <font-awesome-icon v-if="personagem.status == 'Dead'" icon="fa-solid fa-skull" />
                             </div>
                         </template>
                     </Card>

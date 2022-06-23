@@ -9,6 +9,13 @@ import Card from 'primevue/card';
 import InputText from 'primevue/inputtext';
 import Paginator from 'primevue/paginator';
 
+// Importação font awesome
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faSkull, faHeart } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faSkull, faHeart);
+
 //Importação das páginas
 import Home from './pages/Home.vue';
 import Planetas from './pages/Planetas.vue';
@@ -46,6 +53,7 @@ app.component('Button', Button);
 app.component('Menubar', Menubar);
 app.component('Card', Card);
 app.component('InputText', InputText);
-app.component('Paginator', Paginator);  
+app.component('Paginator', Paginator);
+app.component('font-awesome-icon', FontAwesomeIcon)
 
 app.mount('#app')

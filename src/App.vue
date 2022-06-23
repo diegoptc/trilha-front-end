@@ -28,7 +28,7 @@
           },
           {
             label: 'Planetas',
-            icon: 'pi pi-map',
+            icon: 'pi pi-globe',
             command: () => {
               this.$router.push('/planetas');
             }
